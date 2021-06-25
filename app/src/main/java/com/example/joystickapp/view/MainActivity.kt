@@ -69,8 +69,6 @@ class MainActivity : AppCompatActivity() {
             override fun onStopTrackingTouch(seekBar: SeekBar?) {
 //                System.out.println("working3")
             }
-
-
         })
 
 
