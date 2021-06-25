@@ -36,6 +36,7 @@ class MainActivity : AppCompatActivity() {
 
             }
         })
+
         val seekBarVertical = binding.vertical
         seekBarVertical.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
