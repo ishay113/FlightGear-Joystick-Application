@@ -21,27 +21,29 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        // binding view to view_model
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.viewmodel = MainViewModel()
 
-        val joyStickView = binding.joyStick
-        joyStickView.setOnMoveListener(object : JoyStickView.OnMoveListener {
+        // find joyStick by id
+        val joyStick_View = binding.joyStick
+        joyStick_View.setOnMoveListener(object : JoyStickView.OnMoveListener {
             override fun onMove(angle: Double, strength: Float) {
+                // compute x and y
                 val x = cos(angle * PI / 180) * strength / 100
                 val y = sin(angle * PI / 180) * strength / 100
-
-
+                // invoke set from the view model
                 binding.viewmodel?.VM_setAileron(x)
                 binding.viewmodel?.VM_setElevator(y)
 
             }
         })
-
+        // find seekBar by id
         val seekBarVertical = binding.vertical
         seekBarVertical.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 val x: Double = (seekBarVertical.progress).toDouble() / 100
-                System.out.println(x)
+//                System.out.println(x)
                 binding.viewmodel?.VM_setThrottle(x)
             }
 
@@ -59,7 +61,7 @@ class MainActivity : AppCompatActivity() {
         seekBarRudder.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 val x: Double = ((seekBarRudder.progress).toDouble() / 50) - 1
-                System.out.println(x)
+//                System.out.println(x)
                 binding.viewmodel?.VM_setRudder(x)
             }
 

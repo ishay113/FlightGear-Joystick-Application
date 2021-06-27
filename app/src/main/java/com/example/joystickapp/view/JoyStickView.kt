@@ -1,21 +1,19 @@
 package com.example.joystickapp.view
 
 import android.content.Context
-import android.graphics.Color
-import android.graphics.Paint
-import android.graphics.Point
-import android.graphics.PointF
 import android.util.AttributeSet
-import android.view.View
+import com.jackandphantom.joystickview.JoyStickView
+import kotlin.math.PI
+import kotlin.math.cos
+import kotlin.math.sin
 
-class JoyStickView @JvmOverloads constructor(
-    context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
-) : View(context, attrs, defStyleAttr) {
-    private val paint = Paint().apply{
-        style = Paint.Style.STROKE
-        color = Color.parseColor("#FFC107")
-        isAntiAlias = true
+class JoystickView(context: Context, attrs: AttributeSet?, defStyleAttr: Int) :
+    JoyStickView(context, attrs, defStyleAttr) {
+
+    override fun onMove(angle: Double, strength: Float) {
+        val x = cos(angle * PI / 180) * strength / 100
+        val y = sin(angle * PI / 180) * strength / 100
+
     }
-    private var radius: Float = 0f
-    private var center: PointF = PointF()
+
 }

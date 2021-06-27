@@ -42,7 +42,7 @@ class FGPlayer {
         val thread = Thread {
             try {
                 out.print("set /controls/flight/elevator ${double}\r\n")
-                System.out.print("set /controls/flight/elevator ${double}\r\n")
+//                System.out.print("set /controls/flight/elevator ${double}\r\n")
                 out.flush()
             } catch (e: Exception) {
                 e.printStackTrace()
@@ -72,7 +72,7 @@ class FGPlayer {
         val thread = Thread {
             try {
                 out.print("set /controls/engines/current-engine/throttle $double\r\n")
-                System.out.print("set /controls/engines/current-engine/throttle $double\r\n")
+//                System.out.print("set /controls/engines/current-engine/throttle $double\r\n")
                 out.flush()
             } catch (e: Exception) {
                 e.printStackTrace()
