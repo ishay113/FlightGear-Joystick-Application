@@ -7,7 +7,7 @@ In this video, we explain our work and present the app we made. We also show an 
 
 ## Installation and Running the App
 - Download FlightGear simulator. Open the app -> go to setting page -> connect to your WiFi local IP adress
-- FlightGear Configuration: ```telnet=socket,in,10.127.0.0.1,6400,tcp```
+- FlightGear Configuration: ```--telnet=socket,in,10,127.0.0.1,6400,tcp```
 - Run the Androiad app directly from your AndroidStudio and fill the form
 - Start the flight on your FlightGear simulator. 
 - Click the 'Connect' button in order to connect the FlightGear Server. You can now control your flight using the Controller on your app.
