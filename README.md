@@ -3,7 +3,7 @@ Advanced Programing 2 - assiment 3 - remote contorller for flight simulator
 in this assiment we create an androaid app that manipulate and conterol an airplain flight in the Fligt Gear program. we implmanted the app in KOTLIN.
 
 ## Presentation video:
-We explain and present the app and show a demo video right [here]()
+We explain and present the app and show a demo video right [here](https://youtu.be/2CmC4FTG8PE)
 
 ## Run and Install Preperation
 - download Flight Gear simulator, open the app, go to setting and connect to your WIFI local IP adress
